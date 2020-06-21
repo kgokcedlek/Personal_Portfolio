@@ -1,0 +1,16 @@
+<h1>Gokce's Portfolio</h1>
+{% load static %}
+<a href="{% static 'portfolio/GokceDilekKisbetCv - Turkce.pdf'%}">Resume</a>
+<img src="{%static 'portfolio/gokce.png'%}" alt="">
+
+{% for project in projects %}
+
+<h1>{{project.title}}</h1>
+<p>{{project.description}}</p>
+<img src="{{project.image.url}}" alt="">
+
+{% if project.url %}
+<br>
+<a href="{{ project.url }}">Link</a>
+{% endif %}
+{%endfor%}
